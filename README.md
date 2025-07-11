@@ -1,3 +1,4 @@
+# Dbuzzz Frontend (React + Vite)
 
 ## Setup Instructions
 
@@ -57,11 +58,67 @@ Frontend will run at: `http://localhost:5173`
 
 ---
 
-### 📦 Tech Stack
+## 📡 API Endpoints
 
-- React + Vite
+### 🔐 User Routes (`/api/users`)
+| Method | Endpoint        | Description          | Auth Required |
+|--------|------------------|----------------------|---------------|
+| POST   | `/register`      | Register new user    | ❌            |
+| POST   | `/login`         | Login user           | ❌            |
+| GET    | `/me`            | Get logged in user profile | ✅       |
+
+### ✅ Task Routes (`/api/tasks`)
+| Method | Endpoint           | Description               | Auth Required |
+|--------|--------------------|---------------------------|---------------|
+| POST   | `/create`          | Create a task             | ✅            |
+| GET    | `/get`             | Get all tasks by user     | ✅            |
+| GET    | `/active`          | Get active tasks          | ✅            |
+| GET    | `/pending`         | Get pending tasks         | ✅            |
+| GET    | `/completed`       | Get completed tasks       | ✅            |
+| PUT    | `/update/:id`      | Update a task by ID       | ✅            |
+| DELETE | `/delete/:id`      | Delete a task by ID       | ✅            |
+
+> 🛡️ All task routes require JWT authentication.
+
+---
+
+## 🛠️ Technologies Used
+
+### Frontend:
+- React
+- Vite
 - Tailwind CSS
 - Redux Toolkit
 - Axios
 - React Router DOM
 
+### Backend:
+- Node.js
+- Express.js
+- MongoDB (with Mongoose)
+- JWT (Authentication)
+- dotenv
+- CORS
+
+---
+
+## ☁️ Deployment (Bonus Points)
+
+### ✅ Backend (Render):
+1. Create a new Web Service on [https://render.com](https://render.com)
+2. Connect your GitHub repo: `Dbuzzz_backend`
+3. Add environment variables (same as `.env`)
+4. Set build command: `npm install`
+5. Start command: `npm start`
+
+### ✅ Frontend (Vercel/Netlify):
+1. Go to [https://vercel.com](https://vercel.com) or [https://netlify.com](https://netlify.com)
+2. Import `Dbuzzz_frontend` GitHub repo
+3. Add environment variable:
+   - `VITE_API_URL=https://your-backend-url/api`
+4. Build command: `npm run build`
+5. Output directory: `dist`
+
+---
+
+✅ Everything is now ready to use and deploy!
