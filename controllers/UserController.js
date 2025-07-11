@@ -63,5 +63,19 @@ const loginUser = async (req, res) => {
     }
 };
 
+const getUserProfile = async (req, res) => {
+    try {
+        // req.user should be populated by auth middleware
+        const user = await User.findById(req.user.id).select('name email');
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
 
-module.exports = { registerUser, loginUser };
+        res.json({ name: user.name, email: user.email });
+    } catch (err) {
+        res.status(500).json({ message: 'Server error', error: err.message });
+    }
+};
+
+
+module.exports = { registerUser, loginUser , getUserProfile};
