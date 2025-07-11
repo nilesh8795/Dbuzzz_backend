@@ -10,7 +10,7 @@ const app = express();
 
 app.use(express.json());
 app.use(cors({
-  origin: 'https://dbuzzz-frontend-otigbcyf0-nilesh8795s-projects.vercel.app',
+  origin: 'https://dbuzzz-frontend.vercel.app/',
   credentials: true,
 }));
 connectDB();
