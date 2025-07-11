@@ -1,46 +1,67 @@
-# 🛠️ Dbuzzz Todo - Backend
 
-This is the **backend** for the **Dbuzzz Todo Application**, built using **Node.js**, **Express.js**, and **MongoDB**. It provides APIs for user authentication and todo task management using JWT-based authorization.
+## Setup Instructions
 
----
-
-## 🔧 Setup Instructions
-
-### 1. Clone the Repository
+### 🔧 Step 1: Backend Setup (Required First)
 
 ```bash
 git clone https://github.com/nilesh8795/Dbuzzz_backend.git
-cd Dbuzzz_Backend
-
-
+cd Dbuzzz_backend
 npm install
+```
 
+Create a `.env` file inside backend root:
 
-# Create a .env file at the root with the following values
-
+```env
 PORT=5000
 MONGODB_URI=mongodb://127.0.0.1:27017/dbuzzz
 JWT_SECRET=your_jwt_secret_key
 JWT_EXPIRES_IN=1d
+```
 
+Start the backend server:
 
-
-# Start the Server
-
+```bash
 npm start
+```
 
+Your backend will run on: `http://localhost:5000`  
+(Optional live backend: `https://dbuzzz-backend.onrender.com`)
 
-Dbuzzz_backend/
-├── config/           # MongoDB connection setup
-├── controllers/      # Logic for auth and todo routes
-├── middleware/       # Auth and error middleware
-├── models/           # Mongoose schemas
-├── routes/           # Route declarations
-├── example.env       # Sample .env template
-├── index.js          # App entry point
-├── package.json      # NPM scripts and dependencies
-└── README.md
+---
 
+### 🚀 Step 2: Frontend Setup
 
-# next setup frontend
-https://github.com/nilesh8795/Dbuzzz_frontend.git
+```bash
+git clone https://github.com/nilesh8795/Dbuzzz_frontend.git
+cd Dbuzzz_frontend
+npm install
+```
+
+Create a `.env` file in frontend root:
+
+```env
+# For local backend
+# VITE_API_URL=http://localhost:5000/api
+
+# For hosted backend
+VITE_API_URL=https://dbuzzz-backend.onrender.com/api
+```
+
+Now start the frontend:
+
+```bash
+npm run dev
+```
+
+Frontend will run at: `http://localhost:5173`
+
+---
+
+### 📦 Tech Stack
+
+- React + Vite
+- Tailwind CSS
+- Redux Toolkit
+- Axios
+- React Router DOM
+
